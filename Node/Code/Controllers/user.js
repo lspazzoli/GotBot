@@ -10,7 +10,7 @@ exports.email = function (req,res) {
 //Step1 Create db object with blank email and mobile and return id to complete step 2 and 3
 exports.fullName = function (req,res) {
   var name = req.body.name;
-  User.create({ name: name, email: " ", cell: " ",}, function (err, awesome_instance) {
+  User.create({ name: name, email: " ", cell: " "}, function (err, awesome_instance) {
       if (err) {  res.send({success:false, message:err}); return this.handleError(err);}
       else res.send({success:true});//TODO Return ID
     });
