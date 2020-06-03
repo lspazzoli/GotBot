@@ -1,0 +1,32 @@
+.input-container {
+  position:relative;
+}
+
+button{
+  float:left;
+  position:absolute;
+  z-index:-1;
+  width: 90px;
+  height: 37px;
+}
+
+input:hover{
+  cursor: pointer;
+}
+
+input{
+  font-size: 10;
+  width: 120px;
+  height: 37px;
+  float: center;
+  background-color: #FFFF66;
+  color: #000;
+  margin: -20px -50px;
+  position:relative;
+  top:50%;
+  left:50%;
+}
+
+html{
+  background-color: #89CFF0;
+}
