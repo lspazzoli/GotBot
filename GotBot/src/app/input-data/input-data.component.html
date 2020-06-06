@@ -6,13 +6,27 @@
     </title>
 </head>
 <body>
-    <input type="text" placeholder="Name"/>
-    <button type="button" name="button" text="Submit"></button>
+<div class="container">
+  <form>
+    <div *ngIf = "nameInput()">
+      <input type="text" placeholder="Name"/>
+      <br/>
+      <button type="button" (click)="inc()">Submit</button>
+    </div>
 
-    <input type="email" placeholder="Email"/>
-    <button type="button" name="button" text="Submit"></button>
+    <div *ngIf = "emailInput()">
+      <input type="email" placeholder="Email"/>
+      <br/>
+      <button type="button"  (click)="inc()">Submit</button>
+   </div>
 
-    <input type="number" placeholder="Phone Number" maxlength="10" />
-    <button type="button" name="button" text="Submit"></button>
+    <div *ngIf = "cellInput()">
+      <input type="number" placeholder="Phone Number" maxlength="10" />
+      <br/>
+      <button type="button"  (click)="inc()">Submit</button>
+   </div>
+  </form>
+  </div>
+
 </body>
 </html>
