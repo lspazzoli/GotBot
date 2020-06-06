@@ -1,6 +1,8 @@
 
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Routes, Router } from '@angular/router';
+
 @Component({
   selector: 'app-root',
   templateUrl: './input-data/input-data.component.html',
@@ -9,14 +11,13 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent  implements OnInit {
   title = 'GotBot';
   field = 0;
-  constructor(private http: HttpClient) {  }
+  id = "";
+  name = "";
+  mobile = "";
+  email = "";
+  constructor(private http: HttpClient, private router: Router) {  }
 
   ngOnInit(): void {
-  }
-
-  inc(){
-    this.field++;
-    alert(this.field);
   }
 
   nameInput(){
@@ -27,30 +28,38 @@ export class AppComponent  implements OnInit {
     return this.field == 1;
   }
 
-  cellInput(){
+  mobileInput(){
       return this.field == 2;
     }
 
+    output(){
+          return this.field == 3;
+        }
+
   // Add Name // TODO USE RESPONSE for step 2 and 3
-  addName(name) {
-    this.http.post(`api/users`, {name})
+  addName() {
+    this.name = document.getElementById('name').value;
+    this.field=1;
+    /*this.http.post(`api/users`, {name})
       .subscribe(() => {
-
-      })
+      })*/
   }
 
-  addEmail(email) {
-    this.http.post(`api/name`, {email})
+  addEmail() {
+    this.email = document.getElementById('email').value;
+    this.field=2;
+    /*this.http.post(`api/name`, {email})
       .subscribe(() => {
 
-      })
+      })*/
   }
 
-  addNumber(cell) {
-    this.http.post(`api/mobile`, {cell})
+  addMobile() {
+    this.mobile = document.getElementById('mobile').value;
+    this.field=3;
+    /*this.http.post(`api/mobile`, {cell})
       .subscribe(() => {
 
-      })
+      })*/
   }
-
 }

@@ -1,32 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>
-      GotBot Input
-    </title>
-</head>
-<body>
-<div class="container">
-  <form>
-    <div *ngIf = "nameInput()">
-      <input type="text" placeholder="Name"/>
-      <br/>
-      <button type="button" (click)="inc()">Submit</button>
+  <head>
+      <title>
+        GotBot Input
+      </title>
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <div *ngIf = "nameInput()">
+          <input type="text" placeholder="Name" id="name" />
+          <br/>
+          <button type="button" (click)="addName()">Submit</button>
+        </div>
+
+        <div *ngIf = "emailInput()">
+          <input type="email" placeholder="Email" id = "email"/>
+          <br/>
+          <button type="button"  (click)="addEmail()">Submit</button>
+       </div>
+
+        <div *ngIf = "mobileInput()">
+          <input type="number" placeholder="Phone Number" maxlength="10" id = "mobile" />
+          <br/>
+          <button type="button"  (click)="addMobile()">Submit</button>
+       </div>
+      </form>
     </div>
-
-    <div *ngIf = "emailInput()">
-      <input type="email" placeholder="Email"/>
-      <br/>
-      <button type="button"  (click)="inc()">Submit</button>
-   </div>
-
-    <div *ngIf = "cellInput()">
-      <input type="number" placeholder="Phone Number" maxlength="10" />
-      <br/>
-      <button type="button"  (click)="inc()">Submit</button>
-   </div>
-  </form>
-  </div>
-
-</body>
+    <div class = "results" *ngIf = "output()">
+      <table >
+        <td>
+          <tr>Name</tr>
+          <tr>Email</tr>
+          <tr>Mobile</tr>
+        </td>
+        <td>
+          <tr>{{name}}</tr>
+          <tr>{{email}}</tr>
+          <tr>{{mobile}}</tr>
+        </td>
+      </table>
+    </div>
+  </body>
 </html>

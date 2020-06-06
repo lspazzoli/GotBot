@@ -4,6 +4,16 @@
   height: 60%;
 }
 
+.results{
+    position: relative;
+    text-align: center;
+    background-color: lime;
+    border-color: black;
+    width: 17%;
+    margin-top: -22%;
+    margin-left: 32%;
+}
+
 input{
   margin-top: 20%
 }
@@ -13,8 +23,8 @@ button{
   width: 10%;
 }
 
-html{
-  background-color: #89CFF0;
+body{
+  background-color: lightblue;
   height: 100vh;
   width: 100vw;
 }
