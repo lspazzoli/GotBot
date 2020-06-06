@@ -4,14 +4,20 @@
   height: 60%;
 }
 
-.results{
-    position: relative;
-    text-align: center;
-    background-color: lime;
-    border-color: black;
-    width: 17%;
-    margin-top: -22%;
-    margin-left: 32%;
+table{
+  border-collapse:collapse;
+  border:1px solid #FF0000;
+  position: relative;
+  text-align: center;
+  background-color: lime;
+  border-color: black;
+  width: 17%;
+  margin-top: -22%;
+  margin-left: 32%;
+}
+
+table td{
+  border:1px solid #FF0000;
 }
 
 input{

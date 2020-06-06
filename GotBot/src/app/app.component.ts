@@ -20,46 +20,47 @@ export class AppComponent  implements OnInit {
   ngOnInit(): void {
   }
 
-  nameInput(){
+  emailInput(){
     return this.field == 0;
   }
 
-  emailInput(){
+  nameInput(){
     return this.field == 1;
   }
 
   mobileInput(){
-      return this.field == 2;
-    }
+    return this.field == 2;
+  }
 
-    output(){
-          return this.field == 3;
-        }
-
-  // Add Name // TODO USE RESPONSE for step 2 and 3
-  addName() {
-    this.name = document.getElementById('name').value;
-    this.field=1;
-    /*this.http.post(`api/users`, {name})
-      .subscribe(() => {
-      })*/
+  output(){
+    return this.field == 3;
   }
 
   addEmail() {
     this.email = document.getElementById('email').value;
-    this.field=2;
-    /*this.http.post(`api/name`, {email})
-      .subscribe(() => {
+    this.field=1;
+    this.http.post(`http://localhost:3000/`, {email: this.email})
+      .subscribe((res) => {
+          alert(res);
+      })
+  }
 
-      })*/
+  addName() {
+    this.name = document.getElementById('name').value;
+    this.field=2;
+    this.http.post(`/api/name`, {email: this.email, name : this.name})
+      .subscribe((res) => {
+        alert(res);
+      })
   }
 
   addMobile() {
     this.mobile = document.getElementById('mobile').value;
     this.field=3;
-    /*this.http.post(`api/mobile`, {cell})
-      .subscribe(() => {
-
-      })*/
+    this.http.post(`/api/mobile`, {email: this.email ,mobile: this.mobile})
+      .subscribe((res) => {
+        alert(res);
+      })
   }
+
 }

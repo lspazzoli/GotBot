@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require('../Controllers/user');
 
 
-router.post('/email', User.email);
+router.post('/', User.email);
 
 router.post('/name', User.fullName);
 

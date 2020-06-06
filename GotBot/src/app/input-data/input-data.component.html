@@ -8,16 +8,16 @@
   <body>
     <div class="container">
       <form>
-        <div *ngIf = "nameInput()">
-          <input type="text" placeholder="Name" id="name" />
-          <br/>
-          <button type="button" (click)="addName()">Submit</button>
-        </div>
-
         <div *ngIf = "emailInput()">
           <input type="email" placeholder="Email" id = "email"/>
           <br/>
           <button type="button"  (click)="addEmail()">Submit</button>
+       </div>
+
+       <div *ngIf = "nameInput()">
+         <input type="text" placeholder="Name" id="name" />
+         <br/>
+         <button type="button" (click)="addName()">Submit</button>
        </div>
 
         <div *ngIf = "mobileInput()">

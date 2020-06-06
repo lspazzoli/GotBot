@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const app = express();
 const user = require('./Code/Routes/user');
-const port = 4665;
+const port = 3000;
 
 
 //Set up default mongoose connection
@@ -22,11 +22,11 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 app.use(bodyParser.json());
-app.use('/user', user);
+app.use('/', user);
 app.listen(port, (err) => {
   if (err) {
     return console.log('something bad happened', err)
   }
 
-  console.log(`Server is listening on 4665`)
+  console.log(`Server is listening on 3000`)
 })
